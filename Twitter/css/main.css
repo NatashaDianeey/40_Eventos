@@ -1,0 +1,48 @@
+/*#parrafo{
+	width: 100%;
+	height: 100%;
+}
+
+.btn-primary{
+	border-radius: 8%;
+	padding: 0.4em;
+}
+
+.glyphicon{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+h1{
+	padding: 10px;
+}
+*/
+#add{
+	margin: 10px 0;
+}
+
+.fa-plus{
+	margin-right: 5px;
+}
+
+#lista ul{
+	padding: 10px 0;
+	list-style-type: none;
+}
+
+#lista ul li{
+	background-color: #E0E0E0;
+	margin: 5px 0;
+	padding: 12px;
+}
+
+.remove{
+	background-color: #E0E0E0;
+	border:none;
+	padding: 0 5px 5px;
+	float:right;
+}
+
+.fa-trash-o{
+	font-size: 16px;
+}
