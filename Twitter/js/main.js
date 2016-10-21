@@ -1,67 +1,52 @@
-// // function agregar() {
+function anadirTextoaChecklist() {
+    var agregarTexto = document.getElementById('tareaInput').value;
+    
+    if (agregarTexto == "") {
+        alert('Introduce texto valido');
+    } else  {
+
+        //crear input
+        var createInput = document.createElement('input');
+        createInput.setAttribute('type','checkbox');
+        //crear lista
+        var content = document.createElement('li');
+        //concatena la lista con el checkbox
+        content.appendChild(createInput);
+        //concatena el texto agregado en textarea en lista
+        content.appendChild(document.createTextNode(agregarTexto));
+
+        var btotonGplypicon = document.createElement('button');
+        var spanGplypicon = document.createElement('span');
+        spanGplypicon.setAttribute('class', "fa fa-trash pull-right" );
+        btotonGplypicon.appendChild(spanGplypicon);
+        content.appendChild(btotonGplypicon);
+
+        document.body.appendChild(content);
 
 
-// // 	var valor = document.getElementById("parrafo").value;
-// // }
 
-// function limita(maximoCaracteres) {
-//   var elemento = document.getElementById("texto").value;
-//   if(elemento.value.length >= maximoCaracteres ) {
-//     return false;
-//   }
-//   else {
-//     return true;
-//   }
-// }
- 
-function get_lista() {
-    var lista = new Array;
-    var lista_str = localStorage.getItem('todo');
-    if (lista_str !== null) {
-        lista = JSON.parse(lista_str); 
+//se tiene que poner primero la funcion y despues el evento para que el evento sepa a quien  llamar
+        function presionarCkeck(){
+            content.parentNode.removeChild(content);
+        };
+        btotonGplypicon.onclick=presionarCkeck;
+        
+//Funcion para tachar checklist
+        // function presionChecbox() {
+        //     var checkboxSelect = document.getElementsByTagName('checkbox');
+        //         checkboxSelect.onclick=function (){
+        //             checkboxSelect.nextSibling(agregarTexto.strike());
+        //     }presionChecbox();
+
+
+
+
+
+
+
+
+
+
+
     }
-    return lista;
 }
-
-function add() {
-    var tarea = document.getElementById('tarea').value;
-
-    var lista = get_lista();
-    lista.push(tarea);
-    localStorage.setItem('todo', JSON.stringify(lista));
-    document.getElementById('tarea').value="";
-    show();
-
-    return false;
-}
-
-function remove() {
-    var id = this.getAttribute('id');
-    var lista = get_lista();
-    lista.splice(id, 1);
-    localStorage.setItem('todo', JSON.stringify(lista));
-
-    show();
-
-    return false;
-}
-
-function show() {
-    var lista = get_lista();
-
-    var html = '<ul>';
-    for(var i=0; i<lista.length; i++) {
-        html += '<li>' + lista[i] + '<button class="remove" id="' + i  + '"><i class="fa fa-trash-o" aria-hidden="true"></i></button></li>';
-    };
-    html += '</ul>';
-
-    document.getElementById('lista').innerHTML = html;
-
-    var buttons = document.getElementsByClassName('remove');
-    for (var i=0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', remove);
-    };
-}
-
-document.getElementById('add').addEventListener('click', add);
-show();

@@ -10,31 +10,38 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-	<header>
-	  	<div class="navbar navbar-default container-fluid">
-	  		<div class="row">
-				<div class="col-xs-12 col-md-12">		   
-				    <h1 class="text-center">TODO APP</h1>
+		<header>
+		  	<div class="navbar navbar-default container-fluid">
+		  		<div class="row">
+					<div class="col-xs-12 col-md-12">		   
+					    <h1 class="text-center">TODO APP</h1>
+					</div>
 				</div>
 			</div>
-		</div>
-	</header>
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-md-12">
-					<!-- <textarea id="tarea" class="form-control" rows="5" id="comment" placeholder="Añade tu nueva tarea"></textarea>
-					<button id="add" type="button" class="btn boton btn-primary" class="boton" id="btn-agregar" value="Agregar Tarea" onclick='buttonadd' ()>
-						<span class="glyphicon glyphicon-plus"></span>Agregar texto
-					</button>
-					<div id="lista"></div> -->
-					<textarea id="tarea" class="form-control" rows="5" id="comment" placeholder="Escribe tu nueva tarea"></textarea>
-					<button id="add" type="button" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>Añadir tarea</button>
-					<div id="lista">
+		</header>
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<!-- <textarea id="tarea" class="form-control" rows="5" id="comment" placeholder="Añade tu nueva tarea"></textarea>
+						<button id="add" type="button" class="btn boton btn-primary" class="boton" id="btn-agregar" value="Agregar Tarea" onclick='buttonadd' ()>
+							<span class="glyphicon glyphicon-plus"></span>Agregar texto
+						</button>
+						<div id="lista"></div> -->
+						<textarea class="error form-control" rows="5" id="tareaInput" placeholder="Escribe tu nueva tarea"></textarea>
+						<div>
+							<button id="btn-agregar" type="button" class="btn btn-primary" onclick="anadirTextoaChecklist()" value="Agregar">
+								<span class="fa fa-plus" aria-hidden="true"></span> Añadir tarea
+							</button>
+						</div>
+						
+						<div id="tareas">
+							<ul class="lista" id="lista"></ul>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<script src="js/main.js"></script>
-</body>
+		</section>
+		<script src="js/main.js"></script>
+	</body>
 </html>
