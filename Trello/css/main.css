@@ -1,0 +1,49 @@
+body{
+	background-color: #0066FF;
+	width: 100%;
+	height: 100%;
+}
+
+h1{
+	color: #fff;
+	font-weight: bold;
+}
+.cajaTextoAzul{
+	width: 300px;
+	height: 40px;
+	padding-left: 1%;
+	text-align: left;
+	background-color: #006BA9;
+	border-radius: 4px;
+	border-style: none;
+	cursor: pointer;
+}
+
+.cajaTextoAzul:hover{
+	background-color: #144A6A;
+}
+
+#fondo{
+	width: 20%;
+	height: 30%;
+	padding: 3px;
+	border-radius: 4px;
+	background-color: #E2E4E6;
+	display: block;
+}
+
+#botonVerde{
+	width: 30%;
+	height: 35%;
+	display: block;
+	cursor: pointer;
+    color: white;
+    background-color: #5DB449;
+    margin-top: 5%;
+    display: block;
+}
+
+span{
+	margin: 3% 3%;
+	font-size: 1.9em;
+}

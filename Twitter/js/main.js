@@ -26,10 +26,10 @@ function anadirTextoaChecklist() {
 
 
 //se tiene que poner primero la funcion y despues el evento para que el evento sepa a quien  llamar
-        function presionarCkeck(){
-            content.parentNode.removeChild(content);
-        };
-        btotonGplypicon.onclick=presionarCkeck;
+        // function presionarCkeck(){
+        //     content.parentNode.removeChild(content);
+        // };
+        // btotonGplypicon.onclick=presionarCkeck;
         
 //Funcion para tachar checklist
         // function presionChecbox() {
