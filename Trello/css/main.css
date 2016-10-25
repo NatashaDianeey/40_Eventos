@@ -23,7 +23,7 @@ h1{
 	background-color: #144A6A;
 }
 
-#fondo{
+.fondo{
 	width: 20%;
 	height: 30%;
 	padding: 3px;
@@ -32,18 +32,27 @@ h1{
 	display: block;
 }
 
-#botonVerde{
-	width: 30%;
-	height: 35%;
+.btn{
+	width: 50%;
+	height: 70%;
 	display: block;
 	cursor: pointer;
     color: white;
     background-color: #5DB449;
     margin-top: 5%;
-    display: block;
+	display: inline;
 }
 
 span{
 	margin: 3% 3%;
 	font-size: 1.9em;
+}
+
+
+.inputDentroDivClass{
+	background-color:  #E2E4E6;
+}
+
+.fa{
+	font-size: 1.7em;
 }
