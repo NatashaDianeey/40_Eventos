@@ -5,6 +5,9 @@ var crearTarjeta = document.getElementById('crearTarjeta');
 
 var createInput = document.createElement('input');
 	createInput.setAttribute('id','cajaTexto');
+
+var createSpan = document.createElement('span');
+ 		createSpan.setAttribute('class', 'fa fa-close');
 function crearLista(){
 
 	var createForm = document.createElement('div');
@@ -14,8 +17,8 @@ function crearLista(){
 		createButton.innerHTML="Guardar";
  	   	createButton.setAttribute('class','btn btn-default'); 
  	
- 	var createSpan = document.createElement('span');
- 		createSpan.setAttribute('class', 'fa fa-close');
+ 	// var createSpan = document.createElement('span');
+ 	// 	createSpan.setAttribute('class', 'fa fa-close');
 
  	crearTarjeta.appendChild(createForm);
  	createForm.appendChild(createInput);
@@ -31,18 +34,71 @@ function guardar() {
 		return false;
 	} 
 
+	//Crear y asignar atributos
+	var divTarjetaTexto =document.createElement('div');
+	divTarjetaTexto.setAttribute('class', 'fondo');
+
 	var h4 = document.createElement('h4');
-	var guardarTexto =document.createElement('div');
-	guardarTexto.setAttribute('class', 'fondo');
 
-	var inputDentroDiv = document.createElement('input');
-	inputDentroDiv.setAttribute('placeholder', 'Añade una Tarjeta')
-	inputDentroDiv.setAttribute('class', 'inputDentroDivClass')
 
-	crearTarjeta.appendChild(guardarTexto);
+	var enlaceDentroDiv = document.createElement('a');
+	enlaceDentroDiv.innerHTML="Añade una tarjeta";
+	enlaceDentroDiv.setAttribute('class', 'enlaceDentroDivTarjeta');
+
+
+	
+	//Guardar o Concatenar todo
+	crearTarjeta.appendChild(divTarjetaTexto);
 	h4.innerHTML = createInput.value;
-	guardarTexto.appendChild(h4);
-	guardarTexto.appendChild(inputDentroDiv);
+	divTarjetaTexto.appendChild(h4);
+	divTarjetaTexto.appendChild(enlaceDentroDiv);
+
+
+
+	function changeTarjetVStextarea() {
+		var divTextAreaButtonSpan = document.createElement('div');
+
+		var areaTextoCambio = document.createElement('textarea');
+		areaTextoCambio.setAttribute('class', 'areaTextChange');
+
+		var buttonDentroDivAnadir = document.createElement('button');
+		buttonDentroDivAnadir.innerHTML="Añadir";
+		buttonDentroDivAnadir.setAttribute('class', 'btn btn-default');
+
+
+		divTextAreaButtonSpan.appendChild(areaTextoCambio);
+		divTextAreaButtonSpan.appendChild(buttonDentroDivAnadir);
+		divTextAreaButtonSpan.appendChild(createSpan);
+
+
+		enlaceDentroDiv.appendChild(divTextAreaButtonSpan);
+		enlaceDentroDiv.parentElement.replaceChild(divTextAreaButtonSpan, enlaceDentroDiv);
+
+		function validarTextAnadirText() {
+			if ( areaTextoCambio.value == "") {
+				areaTextoCambio.setAttribute('placeholder', 'Ingresa texto tarjeta');
+				return false;
+				//si lo valida
+			}	
+
+		var tarjetaTextoDiv = document.createElement('div');
+		tarjetaTextoDiv.setAttribute('class', 'tarjetaTextoh3Style');
+
+		var textoh3IncluirTarjeta = document.createElement('h3');
+		textoh3IncluirTarjeta.innerHTML=areaTextoCambio.value;
+
+
+		divTarjetaTexto.appendChild(tarjetaTextoDiv);
+		tarjetaTextoDiv.appendChild(areaTextoCambio);
+		tarjetaTextoDiv.appendChild(textoh3IncluirTarjeta);
+
+		} buttonDentroDivAnadir.onclick=validarTextAnadirText;
+
+	} enlaceDentroDiv.onclick = changeTarjetVStextarea;
+
+	
+
+
 
 
 	//Comenzar en 0 el input de Inicio
