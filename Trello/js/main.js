@@ -89,10 +89,13 @@ function guardar() {
 
 
 		divTarjetaTexto.appendChild(tarjetaTextoDiv);
-		tarjetaTextoDiv.appendChild(areaTextoCambio);
 		tarjetaTextoDiv.appendChild(textoh3IncluirTarjeta);
 
+
+		areaTextoCambio.value = "";
 		} buttonDentroDivAnadir.onclick=validarTextAnadirText;
+
+
 
 	} enlaceDentroDiv.onclick = changeTarjetVStextarea;
 
